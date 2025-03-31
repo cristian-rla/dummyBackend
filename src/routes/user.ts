@@ -1,9 +1,12 @@
 import express from 'express'
-const router = express.Router();
+import UserHttpHandler from '../handlers/user.js';
 
-router.get('/', getUsers)
-router.get('/:id', getTweetById);
-router.put('/:id', updateTweet);
-router.delete('/:id', deleteTweet);
+const router = express.Router();
+const userHttpHandler = new UserHttpHandler();
+
+router.get('/', userHttpHandler.getUsers)
+router.get('/:id', userHttpHandler.getUser);
+router.put('/:id', userHttpHandler.updateUser);
+router.delete('/:id', userHttpHandler.deleteUser);
 
 export default router;

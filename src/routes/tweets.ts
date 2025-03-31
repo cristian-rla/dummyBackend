@@ -1,9 +1,12 @@
 import express from 'express'
-const router = express.Router();
+import TweetHttpHandler from '../handlers/tweet.js';
 
-router.get('/', getTweets);  // Qué función se ejecuta al llegar al path
-router.get('/:id', getTweetById);
-router.put('/:id', updateTweet);
-router.delete('/:id', deleteTweet);
+const router = express.Router();
+const tweetHttpHandler = new TweetHttpHandler();
+
+router.get('/', tweetHttpHandler.getTweets);  // Qué función se ejecuta al llegar al path. Por qué no se le puede poner paréntesis
+router.get('/:id', tweetHttpHandler.getTweetById);
+router.put('/:id', tweetHttpHandler.updateTweet);
+router.delete('/:id', tweetHttpHandler.deleteTweet);
 
 export default router;
