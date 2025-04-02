@@ -1,10 +1,10 @@
 import { Request, Response, NextFunction } from "express";
-import TweetController from "../controllers/tweet";
+import TweetController from  "../controllers/tweet";
+import TweetService from "../database/user"; 
 
-const tweetController = new TweetController();
+const tweetController = new TweetController(TweetService);
 
 class TweetHttpHandler{
-
     async getTweets(request: Request, response: Response, next: NextFunction){
         try{
             const tweets = await tweetController.getAllTweets();

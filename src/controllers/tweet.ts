@@ -1,6 +1,16 @@
+import TweetService from "../database/user";
+
+// No es necesario hacer una interfaz porque la clase ya dice cual es la estructura y los tipos de datos
 class TweetController{
+    service: TweetService; // De haber utilizado el commonJS module, esto sería typeof TweetService, porque gracias al es modules, TweetService puede ser intepretado como un tipo y como una función (constructora)
+    constructor(service: TweetService){
+        this.service = service;
+    }
+
     async getAllTweets(){
 
+        // Solo regresar los números pares. ESto lo hago en el controlador, no en el query. Segundo comit
+        return [1,2,3,4,5,6,7,8,9,10]; // QUe este arreglo, que es la fuente de datos, se regrese desde la base de datos. No conectar ninguna base de datos. Primer comit
     }
 }
 
