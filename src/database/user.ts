@@ -1,7 +1,7 @@
-import { Request, Response, NextFunction } from "express";
+class UserService{
+    constructor(){
 
-class TweetService{
-
+    }
 }
 
-export default TweetService;
+export default new UserService();

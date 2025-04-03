@@ -1,6 +1,12 @@
-class UserController{
-    async getAllUsers(){
+import UserService from "../database/user";
 
+class UserController{
+    service:typeof UserService;
+    constructor(service: typeof UserService){
+        this.service = service;
+    }
+    async getAllUsers(){
+        
     }
 }
 

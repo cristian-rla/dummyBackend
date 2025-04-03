@@ -1,7 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 import UserController from "../controllers/user";
+import userService from "../database/user"
 
-const userController = new UserController();
+const userController = new UserController(userService);
 
 class UserHttpHandler{
 
