@@ -10,7 +10,7 @@ class TweetController{
     async getAllTweets(){
 
         // Solo regresar los números pares. ESto lo hago en el controlador, no en el query. Segundo comit
-        return [1,2,3,4,5,6,7,8,9,10]; // QUe este arreglo, que es la fuente de datos, se regrese desde la base de datos. No conectar ninguna base de datos. Primer comit
+        return this.service.getAllTweets().filter((element) => element % 2 != 0); // QUe este arreglo, que es la fuente de datos, se regrese desde la base de datos. No conectar ninguna base de datos. Primer comit
     }
 }
 
