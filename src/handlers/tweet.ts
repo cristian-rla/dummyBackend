@@ -5,6 +5,9 @@ import tweetService from "../database/tweet";
 const tweetController = new TweetController(tweetService);
 
 class TweetHttpHandler{
+    constructor(){
+
+    }
     async getTweets(request: Request, response: Response, next: NextFunction){ // La función next es para pasar a la siguiente función 
         try{
             const tweets = await tweetController.getAllTweets();
@@ -26,7 +29,5 @@ class TweetHttpHandler{
 
     }
 }
-
-module.exports = new TweetHttpHandler();
 
 export default TweetHttpHandler;

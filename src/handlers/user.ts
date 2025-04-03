@@ -28,6 +28,4 @@ class UserHttpHandler{
     }
 }
 
-module.exports = new UserHttpHandler();
-
 export default UserHttpHandler;

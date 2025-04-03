@@ -1,5 +1,5 @@
 import express from 'express'
-import UserHttpHandler from '../handlers/user.js';
+import UserHttpHandler from '../handlers/user';
 
 const router = express.Router();
 const userHttpHandler = new UserHttpHandler();
