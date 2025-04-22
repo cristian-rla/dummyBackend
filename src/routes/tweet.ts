@@ -5,8 +5,6 @@ const router = express.Router();
 const tweetHttpHandler = new TweetHttpHandler();
 
 router.get('/', tweetHttpHandler.getTweets);
-router.get('/:id', tweetHttpHandler.getTweetById);
-router.put('/:id', tweetHttpHandler.updateTweet);
-router.delete('/:id', tweetHttpHandler.deleteTweet);
+
 
 export default router;
